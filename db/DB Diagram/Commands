@@ -1,0 +1,59 @@
+docker ps
+
+docker pull postgres:15-alpine
+
+docker run --name postgres15 -p 5600:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:15-alpine
+
+docker exec it  postgres15 psql -U root
+
+
+ select now()
+
+// Install Golang Migrate
+ git clone https://github.com/golang-migrate/migrate.git
+ cd migrate
+ make build
+ mv ./migrate ./usr/bin
+// copy the .migrate executable file in /user/bin folder
+
+
+
+//Connect to the docker db
+docker exec -it postgres15 /bin/sh
+
+
+//Create a database
+createdb --username=root --owner=root simple_bank
+
+//access the db
+psql simple_bank
+
+//exit the db
+\q
+
+//Drop the DB
+dropdb simple_bank
+
+// exit postgresql cli
+exit
+
+//log back in and create a db in one lline 
+docker exec -it postgres15 createdb --username=root --owner=root simple_bank
+
+//connect to the db withou the container shell
+docker exec -it postgres15 psql -U root simple_bank
+
+
+ 13- Add the postgres Run command in the make file
+
+ 14- Stop the container : docker stop postgres15
+
+ 15- Remove the container : docker rm postgres15
+
+- Veryfy : docker ps -a
+
+
+
+
+
+
