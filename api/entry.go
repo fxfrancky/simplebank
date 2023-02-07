@@ -4,8 +4,8 @@ import (
 	"database/sql"
 	"net/http"
 
+	db "github.com/fxfrancky/simplebank/db/sqlc"
 	"github.com/gin-gonic/gin"
-	db "github.com/techschool/simplebank/db/sqlc"
 )
 
 type createEntryRequest struct {

@@ -6,10 +6,10 @@ import (
 	"log"
 	"net/http"
 
+	db "github.com/fxfrancky/simplebank/db/sqlc"
+	"github.com/fxfrancky/simplebank/token"
 	"github.com/gin-gonic/gin"
 	"github.com/lib/pq"
-	db "github.com/techschool/simplebank/db/sqlc"
-	"github.com/techschool/simplebank/token"
 )
 
 type createAccountRequest struct {

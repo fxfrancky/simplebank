@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/fxfrancky/simplebank/token"
 	"github.com/gin-gonic/gin"
-	"github.com/techschool/simplebank/token"
 )
 
 const (
